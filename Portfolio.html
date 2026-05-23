@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Areej Kuhail | Software Developer</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root {
+      --blush: #f2c4ce;
+      --rose: #c97a8f;
+      --deep-rose: #a85570;
+      --mauve: #7a4060;
+      --plum: #4d2040;
+      --cream: #fdf6f0;
+      --ivory: #faf3ec;
+      --warm-white: #fff9f6;
+      --text-dark: #2a1520;
+      --text-mid: #6b4055;
+      --gold: #c9a96e;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--warm-white);
+      color: var(--text-dark);
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    .navbar {
+      background: rgba(255, 249, 246, 0.95) !important;
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(201, 122, 143, 0.15);
+      padding: 16px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .navbar-brand {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--deep-rose) !important;
+      letter-spacing: 1px;
+    }
+
+    .nav-link {
+      color: var(--text-mid) !important;
+      font-weight: 500;
+      font-size: 0.9rem;
+      margin: 0 6px;
+      transition: color 0.3s;
+      position: relative;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--rose);
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: var(--deep-rose) !important;
+    }
+
+    .btn-nav-outline {
+      border: 1.5px solid var(--rose);
+      color: var(--deep-rose);
+      background: transparent;
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.3s;
+    }
+
+    .btn-nav-outline:hover {
+      background: var(--blush);
+      color: var(--plum);
+    }
+
+    .btn-nav-fill {
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      color: white;
+      border: none;
+      padding: 7px 18px;
+      border-radius: 50px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      transition: all 0.3s;
+      box-shadow: 0 4px 14px rgba(168, 85, 112, 0.3);
+    }
+
+    .btn-nav-fill:hover {
+      transform: translateY(-2px);
+      color: white;
+      box-shadow: 0 8px 20px rgba(168, 85, 112, 0.4);
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(150deg, var(--warm-white) 0%, #fce8ef 45%, #f5e8f0 100%);
+      display: flex;
+      align-items: center;
+      padding-top: 90px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-orb1 {
+      position: absolute;
+      top: -120px;
+      right: -120px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(242, 196, 206, 0.5) 0%, transparent 70%);
+      animation: orb 7s ease-in-out infinite;
+    }
+
+    .hero-orb2 {
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(201, 122, 143, 0.25) 0%, transparent 70%);
+      animation: orb 9s ease-in-out infinite reverse;
+    }
+
+    @keyframes orb {
+
+      0%,
+      100% {
+        transform: scale(1) translate(0, 0);
+      }
+
+      50% {
+        transform: scale(1.08) translate(15px, -15px);
+      }
+    }
+
+    .hero-eyebrow {
+      font-size: 0.78rem;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 600;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: inline-block;
+      width: 36px;
+      height: 1.5px;
+      background: var(--rose);
+    }
+
+    .hero-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--text-dark);
+      margin-bottom: 10px;
+    }
+
+    .hero-name span {
+      background: linear-gradient(135deg, var(--rose), var(--mauve));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--text-mid);
+      margin-bottom: 22px;
+      letter-spacing: 0.3px;
+    }
+
+    .hero-desc {
+      font-size: 0.95rem;
+      line-height: 1.85;
+      color: #7a5065;
+      max-width: 440px;
+      margin-bottom: 38px;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 50px;
+    }
+
+    .btn-primary-rose {
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      color: white;
+      border: none;
+      padding: 13px 30px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(168, 85, 112, 0.3);
+    }
+
+    .btn-primary-rose:hover {
+      transform: translateY(-3px);
+      color: white;
+      box-shadow: 0 14px 32px rgba(168, 85, 112, 0.45);
+    }
+
+    .btn-ghost-rose {
+      background: transparent;
+      color: var(--deep-rose);
+      border: 1.5px solid rgba(201, 122, 143, 0.5);
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.3s;
+    }
+
+    .btn-ghost-rose:hover {
+      background: var(--blush);
+      color: var(--plum);
+      transform: translateY(-3px);
+    }
+
+    /* Avatar */
+    .avatar-frame {
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--blush), var(--rose), var(--mauve));
+      padding: 4px;
+      box-shadow: 0 24px 60px rgba(168, 85, 112, 0.3);
+      position: relative;
+      margin: 0 auto;
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #fce8ef, #f5d5e0);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 5rem;
+      color: var(--deep-rose);
+      font-weight: 700;
+    }
+
+    .tech-badge {
+      position: absolute;
+      background: white;
+      border-radius: 50px;
+      padding: 7px 14px;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .badge-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .b1 {
+      top: 10px;
+      right: -30px;
+      animation: fl 4s ease-in-out infinite;
+    }
+
+    .b2 {
+      bottom: 70px;
+      left: -40px;
+      animation: fl 5s ease-in-out infinite 1s;
+    }
+
+    .b3 {
+      bottom: -5px;
+      right: 0;
+      animation: fl 4.5s ease-in-out infinite 0.5s;
+    }
+
+    @keyframes fl {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+    }
+
+    /* Scroll anim */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--rose);
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 14px;
+    }
+
+    .section-line {
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--rose), var(--blush));
+      border-radius: 2px;
+      margin-bottom: 48px;
+    }
+
+    /* ABOUT */
+    .about-section {
+      background: var(--ivory);
+    }
+
+    .about-card {
+      background: white;
+      border-radius: 22px;
+      padding: 36px;
+      box-shadow: 0 4px 30px rgba(168, 85, 112, 0.07);
+      border: 1px solid rgba(242, 196, 206, 0.35);
+    }
+
+    .info-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 11px 0;
+      border-bottom: 1px solid rgba(242, 196, 206, 0.3);
+      font-size: 0.9rem;
+      color: var(--text-mid);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-ico {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--blush), #fce8ef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--deep-rose);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .info-row strong {
+      color: var(--text-dark);
+      font-size: 0.85rem;
+      display: block;
+    }
+
+    /* SKILLS */
+    .skills-section {
+      background: var(--warm-white);
+    }
+
+    .skill-card {
+      background: white;
+      border-radius: 20px;
+      padding: 28px;
+      border: 1px solid rgba(242, 196, 206, 0.3);
+      box-shadow: 0 4px 20px rgba(168, 85, 112, 0.05);
+      transition: all 0.35s;
+      height: 100%;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 40px rgba(168, 85, 112, 0.13);
+    }
+
+    .skill-ico {
+      width: 48px;
+      height: 48px;
+      border-radius: 13px;
+      background: linear-gradient(135deg, var(--blush), #fce8ef);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--deep-rose);
+      margin-bottom: 14px;
+    }
+
+    .skill-cat-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 16px;
+    }
+
+    .pill {
+      display: inline-block;
+      background: rgba(242, 196, 206, 0.35);
+      color: var(--plum);
+      border: 1px solid rgba(201, 122, 143, 0.2);
+      padding: 5px 14px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      margin: 3px;
+      transition: all 0.3s;
+    }
+
+    .pill:hover {
+      background: linear-gradient(135deg, var(--rose), var(--deep-rose));
+      color: white;
+      border-color: transparent;
+      transform: translateY(-2px);
+    }
+
+    /* PROJECTS */
+    .projects-section {
+      background: var(--ivory);
+    }
+
+    .proj-card {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid rgba(242, 196, 206, 0.3);
+      box-shadow: 0 4px 20px rgba(168, 85, 112, 0.06);
+      transition: all 0.4s;
+      height: 100%;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 24px 56px rgba(168, 85, 112, 0.16);
+    }
+
+    .proj-header {
+      height: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3.2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-body {
+      padding: 22px;
+    }
+
+    .proj-lang {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--rose);
+      margin-bottom: 8px;
+    }
+
+    .proj-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+
+    .proj-desc {
+      font-size: 0.87rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+
+    .proj-link {
+      font-size: 0.82rem;
+      color: var(--deep-rose);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .proj-link:hover {
+      color: var(--mauve);
+    }
+
+    /* PLATFORMS */
+    .platforms-section {
+      background: var(--warm-white);
+    }
+
+    .platform-card {
+      background: white;
+      border-radius: 20px;
+      padding: 26px;
+      text-align: center;
+      border: 1px solid rgba(242, 196, 206, 0.3);
+      box-shadow: 0 4px 20px rgba(168, 85, 112, 0.06);
+      transition: all 0.35s;
+      text-decoration: none;
+      display: block;
+      height: 100%;
+    }
+
+    .platform-card:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 20px 48px rgba(168, 85, 112, 0.16);
+      border-color: var(--rose);
+    }
+
+    .plat-ico {
+      width: 60px;
+      height: 60px;
+      border-radius: 16px;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+
+    .plat-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 4px;
+    }
+
+    .plat-handle {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-bottom: 14px;
+    }
+
+    .plat-cta {
+      font-size: 0.8rem;
+      color: var(--rose);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    /* CONTACT */
+    .contact-section {
+      background: var(--ivory);
+    }
+
+    .contact-box {
+      background: linear-gradient(135deg, var(--plum), var(--mauve), var(--deep-rose));
+      border-radius: 28px;
+      padding: 64px 48px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-box::before {
+      content: '';
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .contact-box::after {
+      content: '';
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-desc {
+      font-size: 0.95rem;
+      opacity: 0.82;
+      line-height: 1.8;
+      max-width: 460px;
+      margin: 0 auto 36px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-white {
+      background: white;
+      color: var(--deep-rose);
+      border: none;
+      padding: 13px 32px;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      transition: all 0.3s;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-white:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.28);
+      color: var(--plum);
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--text-dark);
+      color: rgba(255, 255, 255, 0.55);
+      text-align: center;
+      padding: 28px;
+      font-size: 0.82rem;
+    }
+
+    footer span {
+      color: var(--rose);
+    }
+
+    @media(max-width:768px) {
+      .hero {
+        padding-top: 100px;
+      }
+
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .avatar-frame {
+        width: 240px;
+        height: 240px;
+      }
+
+      .hero-desc {
+        margin: 0 auto 30px;
+      }
+
+      .hero-btns {
+        justify-content: center;
+      }
+
+      .contact-box {
+        padding: 40px 22px;
+      }
+
+      .b1,
+      .b2,
+      .b3 {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">Areej Kuhail</a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <i class="fas fa-bars" style="color:var(--rose)"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#platforms">Hire Me</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex gap-2">
+          <a href="https://www.linkedin.com/in/areejkuhail/" target="_blank" class="btn-nav-outline">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/areejkuhail" target="_blank" class="btn-nav-fill">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-orb1"></div>
+    <div class="hero-orb2"></div>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6 reveal">
+          <div class="hero-eyebrow">Full-Stack Software Developer</div>
+          <h1 class="hero-name">Areej<br><span>Kuhail</span></h1>
+          <p class="hero-sub">MERN Stack · Islamic University of Gaza</p>
+          <p class="hero-desc">
+            A software engineering student passionate about building real-world web applications
+            using the MERN stack. I turn ideas into clean, functional products with great user experiences.
+          </p>
+          <div class="hero-btns">
+            <a href="#projects" class="btn-primary-rose"><i class="fas fa-code"></i> View Projects</a>
+            <a href="#contact" class="btn-ghost-rose"><i class="fas fa-paper-plane"></i> Get In Touch</a>
+          </div>
+        </div>
+        <div class="col-lg-6 d-flex justify-content-center reveal">
+          <div style="position:relative; display:inline-block;">
+            <div class="avatar-frame">
+              <div class="avatar-inner">A K</div>
+            </div>
+            <div class="tech-badge b1"><span class="badge-dot" style="background:#61DAFB"></span>React.js</div>
+            <div class="tech-badge b2"><span class="badge-dot" style="background:#68A063"></span>Node.js</div>
+            <div class="tech-badge b3"><span class="badge-dot" style="background:#47A248"></span>MongoDB</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5 reveal">
+          <span class="section-eyebrow">Who I Am</span>
+          <h2 class="section-title">About Me</h2>
+          <div class="section-line"></div>
+          <p style="color:var(--text-mid);line-height:1.9;font-size:0.95rem;margin-bottom:16px;">
+            I'm a Software Engineering student at the Islamic University of Gaza, specializing in
+            full-stack web development with the MERN stack — MongoDB, Express.js, React.js, and Node.js.
+          </p>
+          <p style="color:var(--text-mid);line-height:1.9;font-size:0.95rem;">
+            I build complete web applications from database design to frontend UI, and I'm active
+            on freelance platforms delivering quality work for clients worldwide.
+          </p>
+        </div>
+        <div class="col-lg-7 reveal">
+          <div class="about-card">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <h6
+                  style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:16px;">
+                  Personal Info</h6>
+                <div class="info-row">
+                  <div class="info-ico"><i class="fas fa-user-graduate"></i></div>
+                  <div><strong>University</strong>Islamic University of Gaza</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-ico"><i class="fas fa-code-branch"></i></div>
+                  <div><strong>Major</strong>Software Engineering</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-ico"><i class="fas fa-map-marker-alt"></i></div>
+                  <div><strong>Location</strong>Gaza, Palestine</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-ico"><i class="fas fa-language"></i></div>
+                  <div><strong>Languages</strong>Arabic · English</div>
+                </div>
+                <div class="info-row">
+                  <div class="info-ico"><i class="fab fa-github"></i></div>
+                  <div><strong>GitHub</strong>32 contributions last year</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h6
+                  style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:700;color:var(--text-dark);margin-bottom:16px;">
+                  Education</h6>
+                <div style="border-right:2px solid var(--blush);padding-right:16px;">
+                  <div
+                    style="position:relative;margin-bottom:24px;padding-bottom:24px;border-bottom:1px dashed rgba(242,196,206,0.5);">
+                    <span style="font-size:0.75rem;color:var(--rose);font-weight:600;letter-spacing:1px;">2020 —
+                      Present</span>
+                    <div
+                      style="font-family:'Cormorant Garamond',serif;font-size:1rem;font-weight:700;color:var(--text-dark);margin:4px 0 2px;">
+                      B.Sc. Software Engineering</div>
+                    <div style="font-size:0.85rem;color:var(--text-mid);">Islamic University of Gaza</div>
+                  </div>
+                  <div>
+                    <span style="font-size:0.75rem;color:var(--rose);font-weight:600;letter-spacing:1px;">Focus
+                      Areas</span>
+                    <div style="margin-top:8px;">
+                      <span class="pill" style="margin:3px;">Web Development</span>
+                      <span class="pill" style="margin:3px;">Microservices</span>
+                      <span class="pill" style="margin:3px;">Databases</span>
+                      <span class="pill" style="margin:3px;">Algorithms</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="skills-section" id="skills">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-eyebrow">What I Work With</span>
+        <h2 class="section-title">Skills</h2>
+        <div class="section-line mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="skill-card">
+            <div class="skill-ico"><i class="fab fa-react"></i></div>
+            <div class="skill-cat-title">Frontend</div>
+            <div>
+              <span class="pill">React.js</span>
+              <span class="pill">Vue.js</span>
+              <span class="pill">JavaScript</span>
+              <span class="pill">HTML5</span>
+              <span class="pill">CSS3</span>
+              <span class="pill">Bootstrap</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="skill-card">
+            <div class="skill-ico"><i class="fab fa-node-js"></i></div>
+            <div class="skill-cat-title">Backend</div>
+            <div>
+              <span class="pill">Node.js</span>
+              <span class="pill">Express.js</span>
+              <span class="pill">Java</span>
+              <span class="pill">REST APIs</span>
+              <span class="pill">Microservices</span>
+              <span class="pill">JWT Auth</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="skill-card">
+            <div class="skill-ico"><i class="fas fa-database"></i></div>
+            <div class="skill-cat-title">Database</div>
+            <div>
+              <span class="pill">MongoDB</span>
+              <span class="pill">Mongoose</span>
+              <span class="pill">MySQL</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 reveal">
+          <div class="skill-card">
+            <div class="skill-ico"><i class="fas fa-tools"></i></div>
+            <div class="skill-cat-title">Tools</div>
+            <div>
+              <span class="pill">Git & GitHub</span>
+              <span class="pill">Postman</span>
+              <span class="pill">VS Code</span>
+              <span class="pill">Figma</span>
+              <span class="pill">Linux</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section" id="projects">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-eyebrow">My Work</span>
+        <h2 class="section-title">GitHub Projects</h2>
+        <div class="section-line mx-auto"></div>
+      </div>
+      <div class="row g-4">
+        <!-- my-ecommerce-backend -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#fce8ef,#f0d8e8)">🛒</div>
+            <div class="proj-body">
+              <span class="proj-lang">JavaScript · Node.js</span>
+              <h3 class="proj-title">E-Commerce Backend</h3>
+              <p class="proj-desc">Backend system for an online store — RESTful APIs for products, orders, users, and
+                authentication.</p>
+              <a href="https://github.com/areejkuhail/my-ecommerce-backend" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- App-Store -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#e8f0fc,#d8e4f5)">📱</div>
+            <div class="proj-body">
+              <span class="proj-lang">JavaScript</span>
+              <h3 class="proj-title">App Store</h3>
+              <p class="proj-desc">A web application for browsing and managing apps, built with JavaScript.</p>
+              <a href="https://github.com/areejkuhail/App-Store" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- app-store1 -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#fce8ef,#f5e8fc)">🔧</div>
+            <div class="proj-body">
+              <span class="proj-lang">JavaScript</span>
+              <h3 class="proj-title">App Store v2</h3>
+              <p class="proj-desc">An updated version of the App Store project with additional features and
+                improvements.</p>
+              <a href="https://github.com/areejkuhail/app-store1" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- E-Learning-Microservices -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#e8fcf0,#d8f0e8)">🎓</div>
+            <div class="proj-body">
+              <span class="proj-lang">Java · Microservices</span>
+              <h3 class="proj-title">E-Learning Microservices</h3>
+              <p class="proj-desc">A microservices-based e-learning platform built with Java, handling services for
+                courses and students.</p>
+              <a href="https://github.com/areejkuhail/E-Learning-Microservices" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Bootstrap -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#f0e8fc,#e0d0f8)">🎨</div>
+            <div class="proj-body">
+              <span class="proj-lang">HTML · Bootstrap</span>
+              <h3 class="proj-title">Bootstrap UI Project</h3>
+              <p class="proj-desc">A responsive web interface built with HTML and Bootstrap, demonstrating layout and
+                component skills.</p>
+              <a href="https://github.com/areejkuhail/Bootstrap" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- my-first-project -->
+        <div class="col-md-6 col-lg-4 reveal">
+          <div class="proj-card">
+            <div class="proj-header" style="background:linear-gradient(135deg,#fceee8,#f5ddd0)">⚡</div>
+            <div class="proj-body">
+              <span class="proj-lang">Vue.js</span>
+              <h3 class="proj-title">My First Project</h3>
+              <p class="proj-desc">A Vue.js web application — my starting point in frontend development with
+                component-based architecture.</p>
+              <a href="https://github.com/areejkuhail/my-first-project" target="_blank" class="proj-link">
+                <i class="fab fa-github"></i> View on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <a href="https://github.com/areejkuhail" target="_blank" class="btn-ghost-rose">
+          <i class="fab fa-github"></i> See All Repositories
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORMS -->
+  <section class="platforms-section" id="platforms">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="section-eyebrow">Freelance & Professional</span>
+        <h2 class="section-title">Find Me On</h2>
+        <div class="section-line mx-auto"></div>
+      </div>
+      <div class="row g-4 justify-content-center">
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://www.linkedin.com/in/areejkuhail/" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#0077B5,#0e9ae0)">
+              <i class="fab fa-linkedin" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">LinkedIn</div>
+            <div class="plat-handle">Areej Kuhail</div>
+            <div class="plat-cta">View Profile <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://github.com/areejkuhail" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#24292e,#3a3a3a)">
+              <i class="fab fa-github" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">GitHub</div>
+            <div class="plat-handle">areejkuhail</div>
+            <div class="plat-cta">View Profile <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://www.upwork.com/freelancers/~01d1a78eedab18ea47" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#6FDA44,#3d9b1f)">
+              <i class="fas fa-briefcase" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">Upwork</div>
+            <div class="plat-handle">Areej Kuhail</div>
+            <div class="plat-cta">Hire Me <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://mostaql.com/u/areej21" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#00a99d,#007a72)">
+              <i class="fas fa-laptop-code" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">Mostaql</div>
+            <div class="plat-handle">areej21</div>
+            <div class="plat-cta">Hire Me <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://khamsat.com/user/aree_kuhail" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#f7c200,#d4a100)">
+              <i class="fas fa-star" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">Khamsat</div>
+            <div class="plat-handle">aree_kuhail</div>
+            <div class="plat-cta">View Services <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+        <div class="col-sm-6 col-lg-4 col-xl reveal">
+          <a href="https://www.instagram.com/areej_kuhail/" target="_blank" class="platform-card">
+            <div class="plat-ico" style="background:linear-gradient(135deg,#e1306c,#833ab4)">
+              <i class="fab fa-instagram" style="color:white;font-size:1.4rem"></i>
+            </div>
+            <div class="plat-name">Instagram</div>
+            <div class="plat-handle">areej_kuhail</div>
+            <div class="plat-cta">Follow <i class="fas fa-arrow-right"></i></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-box reveal">
+        <span class="section-eyebrow" style="color:rgba(255,255,255,0.6)">Let's Work Together</span>
+        <h2 class="contact-title">Got a Project?</h2>
+        <p class="contact-desc">
+          I'm available for freelance work and collaborations. Whether it's a web app,
+          an API, or a full-stack solution — let's build something great.
+        </p>
+        <div class="d-flex gap-3 justify-content-center flex-wrap">
+          <a href="https://www.linkedin.com/in/areejkuhail/" target="_blank" class="btn-white">
+            <i class="fab fa-linkedin"></i> Message on LinkedIn
+          </a>
+          <a href="https://www.upwork.com/freelancers/~01d1a78eedab18ea47" target="_blank" class="btn-white">
+            <i class="fas fa-briefcase"></i> Hire on Upwork
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Built with <span>♥</span> by <strong style="color:var(--rose)">Areej Kuhail</strong> · MERN Stack Developer ·
+      Islamic University of Gaza</p>
+    <p style="margin-top:6px;font-size:0.75rem;">© 2025 · All Rights Reserved</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    window.addEventListener('scroll', () => {
+      document.querySelector('.navbar').style.boxShadow =
+        window.scrollY > 50 ? '0 4px 24px rgba(168,85,112,0.1)' : 'none';
+    });
+  </script>
+</body>
+
+</html>
